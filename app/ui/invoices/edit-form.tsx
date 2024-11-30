@@ -9,8 +9,8 @@ import {
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { Button } from "@/app/ui/button";
-import { State, updateInvoice } from "@/app/lib/actions";
-import { useActionState } from "react";
+import { updateInvoice, State } from '@/app/lib/actions';
+import { useActionState } from 'react';
 
 export default function EditInvoiceForm({
   invoice,
@@ -20,9 +20,9 @@ export default function EditInvoiceForm({
   customers: CustomerField[];
 }) {
   const initialState: State = { message: null, error: {} };
+  // Instead, you can pass id to the Server Action using JS bind. This will ensure that any values passed to the Server Action are encoded.
   const updateInvoiceWithId = updateInvoice.bind(null, invoice.id);
   const [state, formAction] = useActionState(updateInvoiceWithId, initialState);
-  // Instead, you can pass id to the Server Action using JS bind. This will ensure that any values passed to the Server Action are encoded.
   return (
     <form action={formAction}>
       <div className="rounded-md bg-gray-50 p-4 md:p-6">
