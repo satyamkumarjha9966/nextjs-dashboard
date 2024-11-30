@@ -1,10 +1,9 @@
 {
   "private": true,
   "scripts": {
-    "build": "next build && next lint --quiet",
+    "build": "next build",
     "dev": "next dev --turbo",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "next start"
   },
   "dependencies": {
     "@heroicons/react": "^2.1.4",
